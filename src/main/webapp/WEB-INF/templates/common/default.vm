@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta name="debug-hidden" content="$!{_hidden_data}"/>
+    #if(!${isonline})
+        <meta name="vm-name" content="$!{viewName}">
+    #end
+    <title>Kidmall- $!pageTitle</title>
+    <!--<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/ais-fed/N3_2.0/2.0.4/css/N3.css">
+    <link rel="stylesheet" type="text/css" href="//g.alicdn.com/ais-fed/n3/1.0.13/css/n3.min.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/layout/base.css?_t=${timestamp}">
+    <link rel="stylesheet" type="text/css" href="/src/css/layout/header.css?_t=${timestamp}">
+    <link rel="stylesheet" type="text/css" href="/src/css/layout/sidebar.css?_t=${timestamp}">
+    <link rel="stylesheet" type="text/css" href="/src/lib/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="/src/lib/select2/css/select2.min.css"></link>-->
+    #foreach($href in $pageCssLinks)
+        <link rel="stylesheet" type="text/css" href="${href}?_t=${timestamp}">
+    #end
+</head>
+<body>
+<!--
+    #parse("/layout/header.vm")
+
+    #if($sidebar == "app")
+        #parse("/layout/app-sidebar.vm")
+    #else
+        #parse("/layout/sidebar.vm")
+    #end-->
+
+<div id="page" class="page">
+    $!prevContainerBlock
+    <div id="content" class="content">
+        $screen_content
+    </div>
+</div>
+
+<script type="text/javascript" src="/src/lib/jquery.js"></script>
+<script type="text/javascript" src="/src/lib/jquery.sprintf.js"></script>
+<script type="text/javascript" src="/src/lib/url.min.js"></script>
+<!--<script type="text/javascript" src="/src/js/libs/n3.min.js"></script>-->
+<script type="text/javascript" src="/src/lib/jquery-ui/jquery-ui.min.js"></script>
+<!--<script type="text/javascript" src="/src/lib/select2/js/select2.min.js"></script>-->
+<script type="text/javascript" src="/src/lib/vue.js"></script>
+<script type="text/javascript" src='/src/lib/vue-resource.js'></script>
+<script type="text/javascript" src="//f.alicdn.com/underscore/1.8.3/underscore-min.js"></script>
+
+<script type="text/javascript" src="/src/js/constants.js?_t=${timestamp}"></script>
+<script type="text/javascript" src="/src/js/env-handler.js?_t=${timestamp}"></script>
+<!--<script type="text/javascript" src="/src/js/base.js?_t=${timestamp}"></script>-->
+<!--<script type="text/javascript" src="/src/js/layout/sidebar.js?_t=${timestamp}"></script>-->
+<!--<script type="text/javascript" src="/src/js/layout/header.js?_t=${timestamp}"></script>-->
+<!--<script type="text/javascript" src="/src/js/resource/resource-handler.js?_t=${timestamp}"></script>-->
+#foreach($src in $pageJsLinks)
+    <script type="text/javascript" src="${src}?_t=${timestamp}"></script>
+#end
+</body>
+</html>

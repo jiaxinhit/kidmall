@@ -1,1 +1,12 @@
-hello
+#set($layout="/common/default.vm") 
+#set($pageCssLinks =[])
+#set($pageJsLinks =[])
+
+<div class="page-container" style="position: relative;">
+    <h4 class="page-title">我关注的应用</h4>
+    <input v-model="abc" />
+    <label>{{abc}}</label>
+<div>
+
+#set($sucess = $pageJsLinks.add("/src/index.js"))
+
